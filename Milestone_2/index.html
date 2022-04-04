@@ -22,6 +22,38 @@
 
     <main id = "app">  
 
+        <!-- filters -->
+        <div class="filter-wrapper">
+
+            <div class="genre-filter">
+                <label for="list-genres">Select a genre:</label>
+
+                <select class="list" name="genres" id="list-genres"
+                v-model="genreSelect" @change="fetchGenre">
+                    <option value='' selected>All</option>
+                    <option v-for="genre in genres"
+                    :value="genre">
+                    {{genre}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="artist-filter">
+                <label for="list-artists">Select a genre:</label>
+
+                <select class="list" name="artists" id="list-artists"
+                v-model="artistSelect" @change="fetchArtist">
+                    <option value='' selected>All</option>
+                    <option v-for="artist in artists"
+                    :value="artist">
+                    {{artist}}
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+
         <div class="container">
 
             <!-- text error -->
