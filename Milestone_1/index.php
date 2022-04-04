@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/assets/server/db.php';
+include __DIR__ . '/../assets/server/db.php';
 
 ?>
 
@@ -14,15 +14,14 @@ include __DIR__ . '/assets/server/db.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../assets/img/logo.png">
     <title>SpotiBool</title>
 </head>
 <body id = "app">
     <header>
         <figure class="header__logo">
-            <img src="./assets/img/logo.png" alt="logo">
+            <img src="../assets/img/logo.png" alt="logo">
         </figure>
     </header>
 
@@ -52,8 +51,6 @@ include __DIR__ . '/assets/server/db.php';
             </div>         
         </div>
     </main>
-
-    <script src="./main.js"></script>
     
 </body>
 </html>
