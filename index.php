@@ -1,3 +1,9 @@
+<?php
+
+include __DIR__ . '/assets/server/db.php';
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
