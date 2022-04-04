@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/img/logo.png">
+    <title>Spotify</title>
+</head>
+<body>
+    <header>
+        <figure class="header__logo">
+            <img src="./assets/img/logo.png" alt="logo">
+        </figure>
+    </header>
+
+    <main id = "app">  
+
+        <div class="container">
+
+            <!-- text error -->
+            <div class="api__error" v-if="error">
+                <h2>CI DISPIACE MA NON E' STATO POSSIBILE COMPLETARE LA RICHIESTA</h2>
+            </div>
+
+            <!-- loader -->
+            <div v-else-if="albums.length == 0" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+            <!-- wrapper music -->
+            <div v-else>                
+                
+                <!-- albums -->
+                <div class="albums-wrapper">
+
+                    <div v-for="(album,i) in albums" class="album-item">
+                        <figure class="album__img">
+                            <img :src="album.poster">
+                        </figure>
+
+                        <div class="album__info">
+                            <h3 class="album__title">{{album.title}}</h3>
+                            <p class="album__artist">{{album.author}}</p>
+                            <p class="album__year">{{album.year}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+    
+</body>
+</html>
