@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+  
+img{
+    max-width: 100%;
+}
+  
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+
+/*********** HEADER ***********/
+header{
+
+    padding: 10px 20px;
+    background-color: rgba(255,255,255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header__logo{
+    width: 45px;
+    cursor: pointer;
+    display: block;
+}
+
+
+/*********** MAIN ***********/
+main{
+    min-height: 100vh;
+    padding: 90px 10px 30px;
+    background-color: #1E2D3B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.albums-wrapper{            
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;    
+}   
+
+.albums-wrapper > *{
+    width: 200px;
+}
+
+.api__error{
+    text-align: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #aaa transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*********** FILTERS ***********/
+
+.filter-wrapper{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.genre-filter > *, .artist-filter > *{
+    margin-right: 8px;
+}
+
+.filter-wrapper .list{
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+@media all and (max-width:500px) {
+    .filter-wrapper{
+        flex-direction: column;
+    }        
+}
+
+
+/*********** ALBUM ITEMS ***********/
+.album-item{
+    text-align: center;
+    background-color: rgba(255,255,255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 14px 0px rgba(black, 0.5);
+    cursor: pointer;
+    user-select: none;
+    transition: all 350ms ease-in-out;
+    min-height: 340px;
+}
+
+.album-item:hover{
+    transform: scale(1.05);
+}
+
+.album-item .album__img{
+    max-height: 160px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.album-item .album__img img{
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.album__title{
+    margin-bottom: 25px;
+}
+
+.album__artist, .album__year{
+    color: #808080;
+    font-weight: 700;
+}
